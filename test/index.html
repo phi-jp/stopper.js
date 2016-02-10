@@ -1,0 +1,32 @@
+
+
+<script src='../stopper.js'></script>
+
+<script>
+
+stopper(3000);
+
+setInterval(function() {
+  console.log('interval');
+}, 100);
+
+var fn = function() {
+  console.log('timeout');
+  setTimeout(function() {
+    fn();
+  }, 100);
+};
+fn();
+
+var fn2 = function() {
+  console.log('animation');
+  requestAnimationFrame(function() {
+    fn2();
+  }, 100);
+};
+fn2();
+
+
+
+
+</script>
